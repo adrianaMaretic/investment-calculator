@@ -1,13 +1,33 @@
 import { Input } from "./Input";
 
-export function InputGroup() {
+export function InputGroup({ handleChange }) {
   return (
     <section id="user-input">
       <ul className="input-group">
-      <Input inputName="initial investment"></Input>
-      <Input inputName="annual investment"></Input>
-      <Input inputName="expected return"></Input>
-      <Input inputName="duration"></Input>
+        <li>
+          <Input
+            inputType="number"
+            inputName="initial investment"
+            handleInputChange={handleChange}
+          ></Input>
+          <Input
+            inputType="number"
+            inputName="expected return"
+            handleInputChange={handleChange}
+          ></Input>
+        </li>
+        <li>
+          <Input
+            inputType="number"
+            inputName="annual investment"
+            handleInputChange={handleChange}
+          ></Input>
+          <Input
+            inputType="number"
+            inputName="duration"
+            handleInputChange={handleChange}
+          ></Input>
+        </li>
       </ul>
     </section>
   );
