@@ -1,7 +1,11 @@
+import { InputGroup } from "./components/InputGroup";
+
 function App() {
   return (
-    <div></div>
-  )
+    <main>
+      <InputGroup></InputGroup>
+    </main>
+  );
 }
 
-export default App
+export default App;
