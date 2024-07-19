@@ -1,4 +1,4 @@
-export function Input({inputType, inputName, handleInputChange }) {
+export function DynamicInput({value, inputType, inputName, setValue }) { 
   const removedWhitespace = inputName.toLowerCase()
   .replace(/ (\w)/g, (_, p1) => p1.toUpperCase());
   
@@ -6,10 +6,10 @@ export function Input({inputType, inputName, handleInputChange }) {
     <p>
       <label htmlFor={removedWhitespace}>{inputName}</label>
       <input
-        value={value}
+        value={value} // onaj binding 
         type={inputType}
         id={removedWhitespace}
-        onChange={handleInputChange}
+        onChange={(e) => setValue(e.target.value)} // mozes ode odma proslijedit funkciju koja ce zvat setValue => setDuration ili setInitialInvestment etc
       />
     </p>
   );
