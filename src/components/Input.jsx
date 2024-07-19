@@ -1,11 +1,15 @@
-export function Input({inputName}) {
-const removedWhitespace = inputName.replace(/\s/g, '')
-
-console.log(removedWhitespace)
+export function Input({inputType, inputName, handleInputChange }) {
+  const removedWhitespace = inputName.toLowerCase()
+  .replace(/ (\w)/g, (_, p1) => p1.toUpperCase());
+  
   return (
-    <li>
+    <p>
       <label htmlFor={removedWhitespace}>{inputName}</label>
-      <input type="number" id={removedWhitespace}/>
-    </li>
+      <input
+        type={inputType}
+        id={removedWhitespace}
+        onChange={handleInputChange}
+      />
+    </p>
   );
 }
